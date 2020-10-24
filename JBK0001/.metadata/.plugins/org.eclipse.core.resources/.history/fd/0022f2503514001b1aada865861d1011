@@ -1,0 +1,57 @@
+package com.jbk.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class DashboardTest {
+
+	DashboardTest dp=null;
+	WebDriver driver=null;
+
+	public DashboardPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	@BeforeMethod
+	public void setUp() {
+		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("file:///F:/Offline%20website/pages/examples/dashboard.html");
+		driver.manage().window().maximize();
+		}
+	
+	@Test(priority = 1)
+	  public void validateCourses() {
+		  Assert.assertTrue(dt.checkCourses());
+	  }
+	
+	@Test(priority = 2)
+	  public void checkSubCourses() {
+		  Assert.assertTrue(dt.checkSubCourses());
+	  }
+	
+	@Test(priority = 3)
+	  public void buttonIsClickable() {
+		  Assert.assertTrue(dt.buttonIsClickable());
+	  }
+	
+	@Test(priority = 4)
+	  public void logoutButtonWorking() {
+		  Assert.assertTrue(dt.logoutButtonWorking());
+	  }
+	
+	@Test(priority = 5)
+	  public void checkDashboardUrl() {
+		  Assert.assertTrue(dt.checkDashboardUrl());
+	  }
+
+	@AfterMethod
+	public void closeBrowser()
+	{
+		driver.close();
+	}
+}

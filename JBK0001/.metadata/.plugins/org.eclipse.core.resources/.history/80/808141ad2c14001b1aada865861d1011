@@ -1,0 +1,14 @@
+package com.jbk.repository;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class DashboardRepository {
+
+	@Findby(By.xpath("//h3"))
+	public List<WebElement> webElement;
+	
+
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="64533" started-at="2020-10-22T05:21:39Z" finished-at="2020-10-22T05:22:44Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="64533" started-at="2020-10-22T05:21:39Z" finished-at="2020-10-22T05:22:44Z">
+      <class name="com.jbk.dashboard.DashboardTesting">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="setUp" is-config="true" duration-ms="12576" started-at="2020-10-22T05:21:39Z" finished-at="2020-10-22T05:21:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="checkCourses()[pri:1, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="checkCourses" duration-ms="314" started-at="2020-10-22T05:21:52Z" finished-at="2020-10-22T05:21:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkCourses -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="closeBrowser" is-config="true" duration-ms="587" started-at="2020-10-22T05:21:52Z" finished-at="2020-10-22T05:21:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="setUp" is-config="true" duration-ms="8183" started-at="2020-10-22T05:21:53Z" finished-at="2020-10-22T05:22:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="checkSubCourses()[pri:2, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="checkSubCourses" duration-ms="115" started-at="2020-10-22T05:22:01Z" finished-at="2020-10-22T05:22:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkSubCourses -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="closeBrowser" is-config="true" duration-ms="146" started-at="2020-10-22T05:22:01Z" finished-at="2020-10-22T05:22:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="setUp" is-config="true" duration-ms="7618" started-at="2020-10-22T05:22:01Z" finished-at="2020-10-22T05:22:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="buttonIsClickable()[pri:3, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="buttonIsClickable" duration-ms="275" started-at="2020-10-22T05:22:09Z" finished-at="2020-10-22T05:22:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- buttonIsClickable -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="closeBrowser" is-config="true" duration-ms="187" started-at="2020-10-22T05:22:09Z" finished-at="2020-10-22T05:22:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="setUp" is-config="true" duration-ms="7599" started-at="2020-10-22T05:22:09Z" finished-at="2020-10-22T05:22:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyMoreInfoWithWindowsHandles()[pri:4, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="verifyMoreInfoWithWindowsHandles" duration-ms="9568" started-at="2020-10-22T05:22:17Z" finished-at="2020-10-22T05:22:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMoreInfoWithWindowsHandles -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="closeBrowser" is-config="true" duration-ms="211" started-at="2020-10-22T05:22:26Z" finished-at="2020-10-22T05:22:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="setUp" is-config="true" duration-ms="8126" started-at="2020-10-22T05:22:26Z" finished-at="2020-10-22T05:22:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="logoutButtonWorking()[pri:5, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="logoutButtonWorking" duration-ms="732" started-at="2020-10-22T05:22:35Z" finished-at="2020-10-22T05:22:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutButtonWorking -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="closeBrowser" is-config="true" duration-ms="215" started-at="2020-10-22T05:22:35Z" finished-at="2020-10-22T05:22:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="setUp" is-config="true" duration-ms="7866" started-at="2020-10-22T05:22:36Z" finished-at="2020-10-22T05:22:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="checkDashboardUrl()[pri:6, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="checkDashboardUrl" duration-ms="9" started-at="2020-10-22T05:22:43Z" finished-at="2020-10-22T05:22:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkDashboardUrl -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.jbk.dashboard.DashboardTesting@2e4b8173]" name="closeBrowser" is-config="true" duration-ms="136" started-at="2020-10-22T05:22:43Z" finished-at="2020-10-22T05:22:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.jbk.dashboard.DashboardTesting -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

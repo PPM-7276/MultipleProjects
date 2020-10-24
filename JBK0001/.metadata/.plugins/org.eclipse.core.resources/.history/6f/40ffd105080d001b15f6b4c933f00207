@@ -1,0 +1,15 @@
+package com.jbk.test;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+
+public class DpVerifyData {
+  @Test(dataProvider = "dp")
+  public void f(Integer n, String s) {
+  }
+
+  @DataProvider
+  public Object[][] dp() {
+   
+  }
+}

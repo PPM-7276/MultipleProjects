@@ -1,0 +1,138 @@
+package com.jbk.test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.jbk.repository.DashboardRepository;
+
+public class DashboardPage extends DashboardRepository {
+	WebDriver driver;
+	int i=1;
+	
+	@BeforeMethod
+	public void setUp() {
+		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("file:///F:/Offline%20website/pages/examples/dashboard.html");
+		driver.manage().window().maximize();
+		}
+
+	public boolean checkCourses(List<WebElement> Courses) {
+		List<String> expCourses = new ArrayList<>();
+		expCourses.add("Selenium");
+		expCourses.add("Java / J2EE");
+		expCourses.add("Python");
+		expCourses.add("Php");
+		System.out.println("Expected>>>>>" + expCourses);
+
+		//List<WebElement> actual = driver.findElements(By.xpath("//h3"));
+		List<WebElement> actual = Courses;
+		List<String> actCourses = new ArrayList<>();
+		for (WebElement we : actual) {
+			actCourses.add(we.getText());
+		}
+		System.out.println(
+				"---------------------------------------------------------------------------------------------------------------");
+		System.out.println("Actual>>>>>" + actCourses);
+		
+		if(actCourses.equals(expCourses)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public boolean checkSubCourses(List<WebElement> checkSubCourses) {
+		List<String> expCourses = new ArrayList<>();
+		expCourses.add("Automation Testing");
+		expCourses.add("Software Development");
+		expCourses.add("Data Science");
+		expCourses.add("Web Development");
+		System.out.println("Expected>>>>>" + expCourses);
+
+		List<WebElement> actual =checkSubCourses ;
+		List<String> actCourses = new ArrayList<>();
+		for (WebElement we : actual) {
+			actCourses.add(we.getText());
+		}
+		System.out.println(
+				"---------------------------------------------------------------------------------------------------------------");
+		System.out.println("Actual>>>>>" + actCourses);
+		if(actCourses.equals(expCourses)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public boolean buttonIsClickable(WebElement buttonIsClickable) {
+		WebElement button = buttonIsClickable;
+		boolean actcheck = button.isEnabled();
+		System.out.println(">>>" + actcheck);
+		if(button.isEnabled()) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public boolean verifyMoreInfoWithWindowsHandles() {
+
+		List<WebElement> moreInfo = driver.findElements(By.xpath("//a[text()='More info ']"));
+
+		for (WebElement we : moreInfo) {
+			System.out.println("Print Button>>>>" + we.getText());
+			we.click();
+		}
+
+		String mainWindow = driver.getWindowHandle();
+		Set<String> set = driver.getWindowHandles();
+		Iterator<String> iterator = set.iterator();
+		while (iterator.hasNext()) {
+			String childWindow = iterator.next();
+			if (!mainWindow.equals(childWindow)) {
+				System.out.println("print title of child window" + driver.switchTo().window(childWindow).getTitle());
+				driver.close();
+			}
+			driver.switchTo().window(mainWindow);
+		}
+		return true;
+	}
+	
+	public boolean logoutButtonWorking() {
+		WebElement button = driver.findElement(By.xpath("//a[text()='LOGOUT']"));
+		button.click();
+		String actTitle=driver.getTitle();
+		String ExpTitle="JavaByKiran | Log in";
+		if(actTitle.equals(ExpTitle)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean checkDashboardUrl() {
+		String actUrl=driver.getCurrentUrl();
+		String expUrl="file:///F:/Offline%20website/pages/examples/dashboard.html";
+		if(actUrl.equals(expUrl)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	@AfterMethod
+	public void closeBrowser()
+	{
+		driver.close();
+	}
+}

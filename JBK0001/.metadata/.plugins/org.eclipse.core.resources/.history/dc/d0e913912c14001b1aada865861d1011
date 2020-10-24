@@ -1,0 +1,11 @@
+package com.jbk.repository;
+
+import org.openqa.selenium.By;
+
+public class DashboardRepository {
+
+	@Findby(By.xpath("//h3"))
+	public 
+	
+
+}

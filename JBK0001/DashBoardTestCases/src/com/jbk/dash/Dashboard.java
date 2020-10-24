@@ -1,0 +1,81 @@
+package com.jbk.dash;
+
+import org.testng.annotations.Test;
+import jxl.Cell;
+import jxl.Sheet;
+import jxl.Workbook;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
+
+public class Dashboard {
+	WebDriver driver;
+	int i=3;
+	
+	@BeforeSuite
+	public void setUp()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("file:///F:/Offline%20website/pages/examples/dashboard.html");
+		driver.manage().window().maximize();
+	}
+	
+  @Test(dataProvider = "dashboardTestData")
+  public void sidebarList(String name1,String name2,String name3,String name4,String name5,String name6) {
+	  List<String> expSidebar=new ArrayList<>();
+	  expSidebar.add(name1);
+	  expSidebar.add(name2);
+	  expSidebar.add(name3);
+	  expSidebar.add(name4);
+	  expSidebar.add(name5);
+	  expSidebar.add(name6);
+	  
+	  System.out.println("Expected>>>>>"+expSidebar);
+	  
+			List<WebElement> actual=driver.findElements(By.xpath("//ul[@class='sidebar-menu']//span"));
+			List<String> actSidebar=new ArrayList<String>();
+			for(WebElement we:actual)
+			{
+				actSidebar.add(we.getText());
+				System.out.println("----------------------------------------------------------------------------------------------------");
+				System.out.println("Actual in method>>>>>"+actSidebar);
+			}
+			Assert.assertEquals(actSidebar, expSidebar);
+  		}
+
+  @DataProvider
+  public String[][] dashboardTestData() throws Exception {
+	  FileInputStream fis = new FileInputStream("Test.xls");
+		Workbook wb = Workbook.getWorkbook(fis);
+		Sheet sh = wb.getSheet("Sheet1");
+		int rows=sh.getRows();
+		int cols=sh.getColumns();
+		
+		String data[][] = new String[rows][cols];
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				Cell cell=sh.getCell(j,i);
+				data[i][j]=cell.getContents();
+			}
+		}
+	return data;
+  }
+
+	/*
+	 * public DashboardTesting dt=null;
+	 * 
+	 * @Test(priority = 1) public void validateCourses() {
+	 * 
+	 * Assert.assertTrue(dt.checkCourses()); }
+	 */
+}

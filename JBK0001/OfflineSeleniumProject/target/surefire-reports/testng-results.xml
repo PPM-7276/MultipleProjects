@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="com.jbk.test.DemoTest" duration-ms="89" started-at="2020-10-21T03:55:55Z" finished-at="2020-10-21T03:55:55Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="89" started-at="2020-10-21T03:55:55Z" finished-at="2020-10-21T03:55:55Z">
+      <class name="com.jbk.test.DemoTest">
+        <test-method status="PASS" signature="test01()[pri:0, instance:com.jbk.test.DemoTest@880ec60]" name="test01" duration-ms="22" started-at="2020-10-21T03:55:55Z" finished-at="2020-10-21T03:55:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test01 -->
+      </class> <!-- com.jbk.test.DemoTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- com.jbk.test.DemoTest -->
+</testng-results>

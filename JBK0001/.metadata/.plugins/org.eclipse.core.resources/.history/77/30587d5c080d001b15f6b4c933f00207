@@ -1,0 +1,24 @@
+package com.jbk.test;
+
+import org.testng.annotations.Test;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.testng.annotations.DataProvider;
+
+public class DpVerifyData {
+  @Test(dataProvider = "VerifyData")
+  public void rowData(String s, String s,String s,String s,String s,String s) {
+	  
+  }
+
+  @DataProvider
+  public String[][] VerifyData() throws Exception {
+	  FileInputStream fis=new FileInputStream("Test.xls");
+	  
+	  
+	  
+	return data;
+  }
+}

@@ -1,0 +1,79 @@
+package com.jbk.test;
+
+import org.testng.annotations.Test;
+
+import jxl.Cell;
+import jxl.Sheet;
+import jxl.Workbook;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+
+public class DpVerifyData {
+	WebDriver driver;
+	Sheet sh;
+	int rowNum=2;
+	@Test
+	public void Login()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("file:///F:/Offline%20website/pages/examples/operators.html");
+		driver.manage().window().maximize();
+	}
+	
+	  @Test(dataProvider = "VerifyExcelData")
+	  public void rowData(String srNum, String Name,String Note,String Connect,String MbNo,String time) {
+		  
+	  List<String> expdata=new ArrayList<>();
+	  expdata.add(srNum);
+	  expdata.add(Name);
+	  expdata.add(Note);
+	  expdata.add(Connect);
+	  expdata.add(MbNo);
+	  expdata.add(time);
+	  System.out.println("Expected>>>>>>"+expdata);
+	  
+	  System.out.println("-------------------------------------------");
+	  
+	  while(int rowNum<=5;)
+		{
+		  	List<WebElement> rowData=driver.findElements(By.xpath("//tr["+rowNum+"]/td"));
+			ArrayList<String> actData=new ArrayList<>();	
+			for(WebElement we:rowData)
+			{
+				actData.add(we.getText());
+			}
+			System.out.println("Actual>>>>>>>>"+actData);
+			Assert.assertEquals(actData, expdata);
+			System.out.println("---------------------------------------------------------------------------------------");
+		}
+	 }
+
+  @DataProvider
+  public String[][] VerifyExcelData() throws Exception {
+	  FileInputStream fis=new FileInputStream("Test.xls");
+	  Workbook wb=Workbook.getWorkbook(fis);
+	  Sheet sh=wb.getSheet("rowData");
+	  int rows=sh.getRows();
+	  int cols=sh.getColumns();
+	  String data[][]=new String[rows][cols];
+	  for(int i=0;i<rows;i++) {
+		  for(int j=0;j<cols;j++)
+		  {
+			  Cell cell=sh.getCell(j,i);
+			  data[i][j]=cell.getContents();
+		  }
+	  }
+	return data;
+  }
+}

@@ -1,0 +1,43 @@
+package com.jbk.repository;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import com.jbk.test.DashboardTest;
+
+public class DashboardPage {
+
+	DashboardTest test=new DashboardTest1();
+	WebDriver driver=null;
+	int i=1;
+
+	public DashboardPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	@Test(priority = 1)
+	  public void validateCourses() {
+		  Assert.assertTrue(dt.checkCourses());
+	  }
+	
+	@Test(priority = 2)
+	  public void checkSubCourses() {
+		  Assert.assertTrue(dt.checkSubCourses());
+	  }
+	
+	@Test(priority = 3)
+	  public void buttonIsClickable() {
+		  Assert.assertTrue(dt.buttonIsClickable());
+	  }
+	
+	@Test(priority = 4)
+	  public void logoutButtonWorking() {
+		  Assert.assertTrue(dt.logoutButtonWorking());
+	  }
+	
+	@Test(priority = 5)
+	  public void checkDashboardUrl() {
+		  Assert.assertTrue(dt.checkDashboardUrl());
+	  }
+
+}

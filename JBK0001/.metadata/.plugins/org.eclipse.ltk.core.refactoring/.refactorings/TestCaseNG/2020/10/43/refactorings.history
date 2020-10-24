@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Test.xls&apos; to &apos;DashBoardTestCases&apos;&#x0D;&#x0A;- Original project: &apos;TestCaseNG&apos;&#x0D;&#x0A;- Destination element: &apos;DashBoardTestCases&apos;&#x0D;&#x0A;- Original element: &apos;Test.xls&apos;" description="Copy file" element1="Test.xls" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1603071472087" target="/DashBoardTestCases" units="0" version="1.0"/>
+</session>
